@@ -59,7 +59,7 @@ public class VatmutMod {
                 .map(RegistryObject::get)
                 .forEach(block -> {
             final Item.Properties properties = new Item.Properties().group(VatmutItemGroup.instance);
-            final BlockItem blockItem = new BlockItem(block, properties);
+            final BlockItem blockItem = new FuelBlockItem(block, properties,((Block_base)block).BurningTime);
             blockItem.setRegistryName(block.getRegistryName());
             registry.register(blockItem);
         });
